@@ -32,7 +32,7 @@ jobs:
         uses: garygrossgarten/github-action-scp@release
         with:
           local: Web/CS260/source/cs260
-          remote: /var/www/html/cs260
+          remote: /var/www/html
           host: ${{ secrets.HOST }}
           username: ${{ secrets.SSH_USER }}
           privateKey: ${{ secrets.KEY }} 
