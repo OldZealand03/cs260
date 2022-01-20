@@ -1,15 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
+    /* margin: 0; */
+    /* padding: 0; */
     box-sizing: border-box;
 }
 
 body {
-    color: #fff;
-    background-color: #000;
+    color: #000;
+    background-color: #fff;
     font-family: "Verdana", sans-serif;
     caret-color: transparent;
-    
+    margin: 0;
+    /* height: 80vh; */
+
+    display: flex;
+    flex-direction: column;
 }
 
 #title {
