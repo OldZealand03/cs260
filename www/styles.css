@@ -1,0 +1,59 @@
+body {
+    color: #fff;
+    background-color: #000;
+    font-family: "Verdana", sans-serif;
+    caret-color: transparent;
+    
+}
+
+#title {
+    color: #fff;
+}
+
+.top-margin {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+  
+.top-margin-li {
+    float: left;
+}
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+  /* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #04AA6D;  
+    /* How do I set each page to know where it is "active"? */
+}
+
+a:link {
+    color: #bfc500;
+    text-decoration: none;
+}
+
+div {
+    color: #000;
+    background-color: #bfc500;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+    width: 200px;
+    /* Use whitespace and overflow properties to change the defaults of the vertical extension */
+    box-sizing: border-box;
+    margin: 20px auto;
+} 
