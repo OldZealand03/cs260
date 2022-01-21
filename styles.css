@@ -1,13 +1,13 @@
 * {
     /* margin: 0; */
-    /* padding: 0; */
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    color: #000;
-    background-color: #fff;
-    font-family: "Verdana", sans-serif;
+    color: #777;
+    background-color: #D3D3D3;
+    font-family: "Lato", sans-serif;
     caret-color: transparent;
     margin: 0;
     /* height: 80vh; */
@@ -15,11 +15,13 @@ body {
     display: flex;
     flex-direction: column;
 }
-
-#title {
-    color: #fff;
+h1 h2 h3 h4 h5 h6 {
+    font-weight: normal;
 }
 
+#title {
+    color: #D3D3D3;
+}
 .top-margin {
     list-style-type: none;
     margin: 0;
@@ -27,11 +29,12 @@ body {
     overflow: hidden;
     background-color: #000;
 }
-  
 .top-margin-li {
     float: left;
 }
-  
+li {
+    list-style: none;
+}
 li a {
     display: block;
     color: white;
@@ -39,31 +42,79 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-  
   /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #111;
+    background-color: #777;
 }
 
 .active {
-    background-color: #04AA6D;  
+    background-color: #105D97;  
     /* How do I set each page to know where it is "active"? */
 }
 
 a:link {
-    color: #bfc500;
+    color: #fff;
     text-decoration: none;
 }
-
-div {
+a:visited {
     color: #000;
-    background-color: #bfc500;
+}
+
+.content {   
+    max-width: 980px;
+    text-align: center;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    /* border: 1px solid red; */
+}
+.primary {
+    /* border: 1px solid #000; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.button {
+    color: #777;
+    background-color: #777;
     padding: 20px;
     text-align: center;
-    border: 2px solid #000;
     border-radius: 5px;
     width: 200px;
-    /* Use whitespace and overflow properties to change the defaults of the vertical extension */
+    /* Use whitespace and overflow properties to change the defaults of the vertical extension  */
     box-sizing: border-box;
     margin: 20px auto;
+    list-style-type: none;
 } 
+
+
+p {
+    text-align: justify;
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+      /* background-color: #F09A9D;  */
+    }
+} 
+  
+  /* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 968px) {
+    .content{
+      width: 50%;
+    }
+}
+  
+/* Desktop Styles */
+@media only screen and (min-width: 969px) {
+    .content {
+      /* width: 0 auto;
+      margin: 0 auto; */
+      max-width: 980px;
+    }
+    .feature-1,
+    .feature-2,
+    .feature-3 {
+      width: 33.3%;
+    }
+}
