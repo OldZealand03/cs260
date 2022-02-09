@@ -1,0 +1,40 @@
+body {
+    background: #89CFF0;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  #output {
+    font-family: Helvetica, sans-serif;
+    color: #000;
+    background: #fff;
+    padding: 1em;
+  }
+  
+  ul {
+    padding: 0;
+  }
+  
+  li {
+    list-style: none;
+    margin: 0.5em;
+  }
+  
+  li button {
+    width: 200px;
+    text-align: left;
+  }
+
+
+table  { 
+    border-collapse: collapse; }
+
+td, th { 
+      border: 1px solid black;     
+      background-color: #fff;  
+      padding: 3px 8px; 
+}
+
+th { 
+      text-align: left; 
+}
+  
