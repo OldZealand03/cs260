@@ -13,7 +13,7 @@ const MOUNTAINS = [
 // let data = MOUNTAINS;
 
 function buildTable(data) {
-    var headers = Object.keys(data[0]);
+    var headers = Object.keys(data[0]);  // is this just an array with [name, height, place] ?
     var table = document.createElement('table');
     var headerRow = document.createElement('tr');
 
