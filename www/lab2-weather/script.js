@@ -25,7 +25,7 @@ document.getElementById("weatherSubmit").addEventListener("click", function (eve
 
 function formatCurrent(json) {
     let results = "<div class=\"inner-current\">";
-    results += '<h2>Weather in ' + json.name + "</h2>";
+    results += '<h2>weather in ' + json.name.toLowerCase() + "</h2>";
     for (let i = 0; i < json.weather.length; i++) {
         results += '<img src="http://openweathermap.org/img/w/' + json.weather[i].icon + '.png"/>';
     }
@@ -46,16 +46,33 @@ function formatCurrent(json) {
 function formatForecast(json) {
     let forecast = "";
     for (let i = 0; i < json.list.length; i++) {
-        if (i == 0 || i == 8 || i == 16 || i == 24 || i == 32) {
-            forecast += "<div class=\"one-day-block\">";
+        if (i == 0) {
+            forecast += "<h4>next twenty-four hours...</h4>";
         }
-        forecast += "<div class=\"inner-forest\">";
-        forecast += "<h2>" + moment(json.list[i].dt_txt).format('MMMM Do YYYY, h:mm:ss a') + "</h2>";
-        forecast += "<p>Temperature: " + json.list[i].main.temp + "</p>";
+        if (i == 8) {
+            forecast += "<h4>one day from now...</h4>";
+        }
+        if (i == 16) {
+            forecast += "<h4>two days from now...</h4>";
+        }
+        if (i == 24) {
+            forecast += "<h4>three days from now...</h4>";
+        }
+        if (i == 32) {
+            forecast += "<h4>four days from now...</h4>";
+        }
+        if (i == 0 || i == 8 || i == 16 || i == 24 || i == 32) {
+            forecast += "<div class=\"row\">";
+        }
+        forecast += "<div class=\"col inner-forest\">";
+        forecast += "<p>" + moment(json.list[i].dt_txt).format('h A') + "</p>";
+        forecast += "<p>" + json.list[i].main.temp + "°</p>";
         forecast += '<img src="http://openweathermap.org/img/w/' + json.list[i].weather[0].icon + '.png"/>'
         forecast += "</div>";
         if (i == 7 || i == 15 || i == 23 || i == 31 || i == 39) {
             forecast += "</div>";
+            forecast += "<br>";
+            forecast += "<br>";
         }
     }
 
