@@ -13,8 +13,8 @@
 } */
 
 .inner-forest {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
 }
 h4 {
     padding-bottom: 10px;
@@ -56,6 +56,10 @@ h1 {
     text-align: center;
     padding: 5px;
     justify-content: center;
+}
+.top {
+    padding-left: 30%;
+    padding-right: 30%;
 }
 
 /* Old */
@@ -104,7 +108,22 @@ h3 {
 .whitespace {
     background-color: #000;
     padding: 50px;
+    border-color: #000;
 }
 
 
 /* Responsive Design */
+@media (max-width: 960px) {
+    .weatherResults {
+      margin-left: 2%;
+      margin-right: 2%;
+    }
+    .row {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .top {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+  }

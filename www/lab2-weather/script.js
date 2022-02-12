@@ -75,6 +75,6 @@ function formatForecast(json) {
             forecast += "<br>";
         }
     }
-
+    forecast += "<div class=\"whitespace\"></div>"
     document.getElementById("forecastResults").innerHTML = forecast;
 }
