@@ -50,16 +50,16 @@ function formatForecast(json) {
             forecast += "<h4>next twenty-four hours...</h4>";
         }
         if (i == 8) {
-            forecast += "<h4>one day from now...</h4>";
-        }
-        if (i == 16) {
             forecast += "<h4>two days from now...</h4>";
         }
-        if (i == 24) {
+        if (i == 16) {
             forecast += "<h4>three days from now...</h4>";
         }
-        if (i == 32) {
+        if (i == 24) {
             forecast += "<h4>four days from now...</h4>";
+        }
+        if (i == 32) {
+            forecast += "<h4>five days from now...</h4>";
         }
         if (i == 0 || i == 8 || i == 16 || i == 24 || i == 32) {
             forecast += "<div class=\"row\">";
