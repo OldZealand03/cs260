@@ -4,8 +4,8 @@ document.getElementById("weatherSubmit").addEventListener("click", function (eve
     if (value === "")
         return;
     console.log(value);
-    const url = "http://api.openweathermap.org/data/2.5/weather?q=" + value + ",US&units=imperial" + "&APPID=0cc64844b5e5a6901ab917e63f458bb6";
-    const url2 = "http://api.openweathermap.org/data/2.5/forecast?q=" + value + ", US&units=imperial" + "&APPID=0cc64844b5e5a6901ab917e63f458bb6";
+    const url = "https://api.openweathermap.org/data/2.5/weather?q=" + value + ",US&units=imperial" + "&APPID=0cc64844b5e5a6901ab917e63f458bb6";
+    const url2 = "https://api.openweathermap.org/data/2.5/forecast?q=" + value + ", US&units=imperial" + "&APPID=0cc64844b5e5a6901ab917e63f458bb6";
     fetch(url)
         .then(function (response) {
             return response.json();
