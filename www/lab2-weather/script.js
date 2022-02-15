@@ -67,10 +67,15 @@ function formatForecast(json) {
         forecast += "<div class=\"col inner-forest\">";
         forecast += "<p>" + moment(json.list[i].dt_txt).format('h A') + "</p>";
         forecast += "<p>" + json.list[i].main.temp + "°</p>";
+        // forecast += "<p><em>" + json.list[i].weather[i].description + "</em></p>";
+        forecast += '<p> feels like: ' + json.list[i].main.feels_like.toFixed() + ' &deg;F</p>'
+        forecast += '<p> humidity: ' + json.list[i].main.humidity + '%</p>'
+        forecast += '<p> wind: ' + json.list[i].wind.speed.toFixed() + 'mph</p>'
         forecast += '<img src="http://openweathermap.org/img/w/' + json.list[i].weather[0].icon + '.png"/>'
         forecast += "</div>";
         if (i == 7 || i == 15 || i == 23 || i == 31 || i == 39) {
             forecast += "</div>";
+            forecast += "<br>";
             forecast += "<br>";
             forecast += "<br>";
         }
