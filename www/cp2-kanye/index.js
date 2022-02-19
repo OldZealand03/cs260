@@ -17,7 +17,6 @@
      "url('images/background13.png')",
      "url('images/background15.png')",
      "url('images/background16.png')",
-     "url('images/background17.png')",
      "url('images/background18.png')",
  ]
 
