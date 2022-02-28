@@ -66,7 +66,7 @@ let app = new Vue({
         },
         addComment() {
             let today = new Date()
-            let display_date = this.months[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + ", " + today.getUTCHours() + ":" + today.getMinutes()
+            let display_date = this.months[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + ", " + today.getHours() + ":" + today.getMinutes()
 
             if (today.getMinutes() === 0) {
                 display_date += "00"
