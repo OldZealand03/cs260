@@ -1,3 +1,5 @@
+Vue.component('star-rating', VueStarRating.default);
+
 let app = new Vue({
     el: '#app',
     data: {
@@ -9,6 +11,12 @@ let app = new Vue({
             alt: ''
         },
         loading: true,
+        addedName: '',
+        addedComment: '',
+        comments: {},
+        months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        ratings: {},
+
     },
     created() {
         this.xkcd();
@@ -50,6 +58,42 @@ let app = new Vue({
         randomComic() {
             this.number = this.getRandom(1, this.max);
         },
+        firstComic() {
+            this.number = 1;
+        },
+        lastComic() {
+            this.number = this.max;
+        },
+        addComment() {
+            let today = new Date()
+            let display_date = this.months[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear() + ", " + today.getUTCHours() + ":" + today.getMinutes()
+
+            if (today.getMinutes() === 0) {
+                display_date += "00"
+            } else if (today.getMinutes() < 10) {
+                display_date += 0
+                display_date += today.getMinutes()
+            }
+
+            if (!(this.number in this.comments))
+                Vue.set(app.comments, this.number, new Array);
+            this.comments[this.number].push({
+                author: this.addedName,
+                text: this.addedComment,
+                date: display_date,
+            });
+            this.addedName = '';
+            this.addedComment = '';
+        },
+        setRating(rating) {
+            if (!(this.number in this.ratings))
+                Vue.set(this.ratings, this.number, {
+                    sum: 0,
+                    total: 0
+                });
+            this.ratings[this.number].sum += rating;
+            this.ratings[this.number].total += 1;
+        }
     },
     computed: {
         month() {
@@ -69,6 +113,14 @@ let app = new Vue({
             month[10] = "November";
             month[11] = "December";
             return month[this.current.month - 1];
+        },
+        currentAverageRating() {
+            if (this.ratings[this.number]) {
+                return (this.ratings[this.number].sum / this.ratings[this.number].total).toFixed(1)
+            } else {
+                return 0
+            }
+
         }
     },
     watch: {

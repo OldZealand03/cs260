@@ -14,22 +14,65 @@
       <p>Loading...</p>
     </div>
     <div v-else>
-      <h2>{{current.safe_title}}</h2>
       <p>
         <button v-on:click="previousComic">Previous</button>
         <button v-on:click="nextComic">Next</button>
         <button v-on:click="randomComic">Random</button>
+        <button v-on:click="firstComic">First</button>
+        <button v-on:click="lastComic">Last</button>
       </p>
+      <br>
+      <h2>{{current.safe_title}}</h2>
       <img v-bind:src="current.img" v-bind:alt="current.alt">
+      <br>
       <p>{{current.alt}}</p>
       <p><i>#{{current.num}}, drawn on {{current.day}} {{month}} {{current.year}}</i></p>
+
+      <br>
+      <div class="rating-setter">
+        <div class="ratings">
+          <star-rating @rating-selected="setRating" :increment="0.5"></star-rating>
+          <p>Average Rating: {{currentAverageRating}}</p>
+        </div>
+
+        <div class="addComment">
+          <h3>Add a Comment</h3>
+          <form v-on:submit.prevent="addComment">
+            <input v-model="addedName" placeholder="Name"></p>
+            <textarea v-model="addedComment"></textarea>
+            <br />
+            <button type="submit">Comment</button>
+          </form>
+        </div>
+      </div>
+      <br>
+
+      <h3>Comments</h3>
+      <div v-for="comment in comments[number]">
+        <hr>
+        <p>"{{comment.text}}"</p>
+        <p><i>-- {{comment.author}}</i></p>
+        <p>{{comment.date}}</p>
+      </div>
     </div>
 
+  </div>
+
+  <div class='footer'>
+    <div class='footer-item'>
+      <a target='_blank' href='https://github.com/BYUCS260/xkcd-browser-OldZealand03'>
+        <img height='50px' width='50px' src='images/GitHub-Mark-120px-plus.png'>
+      </a>
+      <br>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/vue-star-rating@1.7.0/dist/VueStarRating.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue-star-rating/dist/VueStarRating.umd.min.js"></script>`
   <script src="/script.js"></script>
 </body>
 
